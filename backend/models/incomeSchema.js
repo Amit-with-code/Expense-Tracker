@@ -28,6 +28,10 @@ const incomeSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true
+    },
+    description: {
+        type: String,
+        required: true
     }
 },{timestamps:true})
 
