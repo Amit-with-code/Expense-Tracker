@@ -35,6 +35,6 @@ const expenseSchema = new mongoose.Schema({
     }
 },{timestamps:true})
 
-const expenseModel = mongoose.models.expense || mongoose.models("expense",expenseSchema)
+const expenseModel = mongoose.models.expense || mongoose.model("expense",expenseSchema)
 
 export default expenseModel
