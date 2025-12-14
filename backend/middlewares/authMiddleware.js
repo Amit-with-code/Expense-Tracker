@@ -3,7 +3,7 @@ import { Types } from "mongoose"
 
 const authMiddle = (req,res,next) => {
     const token = req.headers.authorization?.split(' ')[1]
-    if (token) {
+    if (!token) {
         return res.status(401).json({message:"Unathorized"})
     }
 
@@ -19,7 +19,7 @@ const authMiddle = (req,res,next) => {
         next()
 
     } catch (error) {
-        return res.status(401).json({message:"Unathorized"})
+        return res.status(500).json({message:"Unathorized"})
     }
 }
 
