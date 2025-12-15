@@ -19,4 +19,4 @@ app.use('/api/user',userRouter);
 
 app.listen(port,()=>{
     console.log(`sever is connected to port : ${port}`)
-})
+})     
