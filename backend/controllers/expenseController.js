@@ -85,7 +85,7 @@ const updateExpense = async (req, res) => {
   }
 };
 
-const getExpense = async (req,res) => { 
+const getExpenses = async (req,res) => { 
     
     try {        
         const userId = req.user?.id
@@ -102,4 +102,4 @@ const getExpense = async (req,res) => {
     }
 }
 
-export {addExpense,deleteExpense,updateExpense,getExpense}
+export {addExpense,deleteExpense,updateExpense,getExpenses}
