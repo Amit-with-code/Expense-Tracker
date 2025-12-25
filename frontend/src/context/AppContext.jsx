@@ -45,7 +45,7 @@ const AppContextProvider = ({ children }) => {
       const currentToken = Cookies.get('token');
       if (!currentToken) return;
 
-      const { data } = await axios.get(`${backendUrl}/api/user/get-expenses`, {
+      const { data } = await axios.get(`${backendUrl}/api/user/get-expense`, {
         headers: getAuthHeader()
       });
 
