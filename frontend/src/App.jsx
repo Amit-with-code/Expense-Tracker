@@ -1,14 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
-
+import {useLocation} from 'react-router-dom'
 const App = () => {
-  return (
-    <div className="h-screen flex items-center justify-center bg-black">
-      hello
-      <h1 className="text-4xl font-bold text-green-500">
-        Tailwind is working ✅
-      </h1>
-    </div>
-  )
+  const location = useLocation()
+  return 
 }
 
 export default App
