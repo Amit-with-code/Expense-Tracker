@@ -16,7 +16,7 @@ export default function Income() {
   });
 
   const fetchIncome = async () => {
-    const res = await API.get("/user/get-income");
+    const res = await API.get("/user/get-expense");
     setIncome(res.data.data || []);
   };
 
@@ -35,9 +35,9 @@ export default function Income() {
 
     try {
       if (editId) {
-        await API.put(`/user/update-income/${editId}`, payload);
+        await API.put(`/user/update-expense/${editId}`, payload);
       } else {
-        await API.post("/user/add-income", payload);
+        await API.post("/user/add-expense", payload);
       }
 
       resetForm();
@@ -61,7 +61,7 @@ export default function Income() {
 
   // 🔥 Delete
   const handleDelete = async (id) => {
-    await API.delete(`/user/delete-income/${id}`);
+    await API.delete(`/user/delete-expense/${id}`);
     fetchIncome();
   };
 
@@ -80,7 +80,7 @@ export default function Income() {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-6">Income</h1>
+        <h1 className="text-2xl font-bold mb-6">Expense</h1>
 
         {/* FORM */}
         <form
@@ -113,9 +113,9 @@ export default function Income() {
           />
 
           <button className={`p-2 rounded text-white md:col-span-2 ${
-            editId ? "bg-yellow-500" : "bg-green-500"
+            editId ? "bg-red-500" : "bg-red-700"
           }`}>
-            {editId ? "Update Income" : "Add Income"}
+            {editId ? "Update Expense" : "Add Expense"}
           </button>
         </form>
 
@@ -134,7 +134,7 @@ export default function Income() {
               </div>
 
               <div className="text-right">
-                <p className="text-green-500 font-bold">₹{item.amount}</p>
+                <p className="text-red-500 font-bold">₹{item.amount}</p>
 
                 <div className="flex gap-2 mt-2 justify-end">
                   <button
