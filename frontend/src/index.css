@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.recharts-wrapper:focus {
+  outline: none !important;
+}
+
+.recharts-bar-rectangle:focus {
+  outline: none !important;
+}
+
+.recharts-layer:focus {
+  outline: none !important;
+}

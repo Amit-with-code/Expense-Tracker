@@ -2,6 +2,7 @@
 import { useState } from "react";
 import API from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -12,22 +13,29 @@ export default function Register() {
     password: "",
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await API.post("/user/register", form);
-      alert("Registered successfully");
-      navigate("/login");
-    } catch (err) {
-      console.error(err);
-      alert("Registration failed");
-    }
-  };
+  const handleRegister = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await API.post("/user/register", {
+      name,
+      email,
+      password,
+    });
+
+    console.log(res.data);
+    toast.success("Register successful 🎉");
+    navigate("/login")
+  } catch (err) {
+    console.log("ERROR:", err.response?.data);
+    toast.error(err.response?.data?.message || "Register failed ❌");
+  }
+};
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleRegister}
         className="bg-white p-6 rounded-xl shadow-md w-80"
       >
         <h2 className="text-xl font-bold mb-4">Register</h2>
