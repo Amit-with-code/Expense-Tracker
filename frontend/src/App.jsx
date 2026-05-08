@@ -9,29 +9,30 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+  <Route path="/" element={<Dashboard />} />   {/* ✅ public */}
 
-      {/*Protected */}
-      <Route
-        path="/income"
-        element={
-          <ProtectedRoute>
-            <Income />
-          </ProtectedRoute>
-        }
-      />
+  <Route path="/login" element={<Login />} />
+  <Route path="/register" element={<Register />} />
 
-      <Route
-        path="/expense"
-        element={
-          <ProtectedRoute>
-            <Expense />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
+  {/* 🔒 Protected */}
+  <Route
+  path="/income"
+  element={
+    <ProtectedRoute>
+      <Income />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/expense"
+  element={
+    <ProtectedRoute>
+      <Expense />
+    </ProtectedRoute>
+  }
+/>
+</Routes>
   );
 }
 

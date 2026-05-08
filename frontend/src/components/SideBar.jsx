@@ -21,25 +21,15 @@ export default function Sidebar() {
           <>
             <Link to="/income">Income</Link>
             <Link to="/expense">Expense</Link>
-
-            <button
-              onClick={handleLogout}
-              className="text-left text-red-500"
-            >
-              Logout
-            </button>
+            <button onClick={handleLogout}>Logout</button>
           </>
         )}
 
         {/* 🔓 If NOT Logged In */}
         {!token && (
           <>
-            <Link to="/login" className="text-blue-500">
-              Login
-            </Link>
-            <Link to="/register" className="text-green-500">
-              Register
-            </Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </>
         )}
       </nav>

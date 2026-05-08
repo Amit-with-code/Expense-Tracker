@@ -1,5 +1,3 @@
-// src/components/LineChart.jsx
-
 import {
   LineChart,
   Line,
@@ -23,7 +21,9 @@ export default function MonthlyLineChart({ data }) {
           <XAxis dataKey="month" />
           <YAxis />
 
-          <Tooltip cursor={{ stroke: "transparent" }} />
+          {/* ✅ remove grey hover */}
+          <Tooltip cursor={{ fill: "transparent" }} />
+
           <Legend />
 
           {/* Income */}
