@@ -14,7 +14,7 @@ connectDB();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors({
-    origin: "https://expense-tracker-with-amit.netlify.app/",
+    origin: "https://expense-tracker-with-amit.netlify.app",
     credentials: true,
 })
 )  
