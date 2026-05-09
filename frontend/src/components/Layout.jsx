@@ -31,9 +31,9 @@ export default function Layout({ children }) {
         <nav className="flex flex-col gap-4">
 
           <Link
-            to="/"
+            to="/dashboard"
             className={`px-4 py-3 rounded-2xl transition duration-300 ${
-              location.pathname === "/"
+              location.pathname === "/dashboard"
                 ? "bg-white text-indigo-600 font-semibold"
                 : "text-white hover:bg-white/20"
             }`}
